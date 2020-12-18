@@ -60,8 +60,6 @@ class TeleportClass
      */
     public function getDestinationUrl()
     {
-        $this->chek($this->url);
-
         $url = $this->prepare($this->url);
 
         try {
@@ -105,11 +103,12 @@ class TeleportClass
     }
 
     /**
-     * Validate url
+     * Convert web interface url to api url if need
      *
-     * @param null $url
+     * @param string $url
+     * @return string|string[]
      */
-    private function chek($url = null)
+    private function prepare(string $url)
     {
         // is empty
         if (empty($url)) {
@@ -120,16 +119,7 @@ class TeleportClass
         if (! filter_var($url, FILTER_VALIDATE_URL, 'FILTER_FLAG_SCHEME_REQUIRED')) {
             exit($this->badUrlMessage . ' : wrong url');
         }
-    }
 
-    /**
-     * Convert web interface url to api url if need
-     *
-     * @param string $url
-     * @return string|string[]
-     */
-    private function prepare(string $url)
-    {
         // if web interface url
         if (strpos($url, self::G)) {
             return str_replace(self::G, self::TPT, $url);
