@@ -1,0 +1,15 @@
+{
+    "name": "abfromstreamhero/admitad-teleport",
+    "description": "PHP wrapper for Admitad Teleport API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "authors": [
+        {
+            "name": "Aleksandr Burov",
+            "email": "ab@streamhero.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
