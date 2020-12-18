@@ -3,7 +3,8 @@
     "description": "PHP wrapper for Admitad Teleport API",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.2",
+        "ext-json": "*"
     },
     "authors": [
         {
@@ -11,5 +12,10 @@
             "email": "ab@streamhero.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "Classes"
+        }
+    }
 }
