@@ -71,7 +71,7 @@ class TeleportClass
 
             return json_decode($result->getContents(), true)[0];
         } catch (RequestException $e) {
-            echo $e->getMessage();
+            exit($e->getMessage());
         }
     }
 
