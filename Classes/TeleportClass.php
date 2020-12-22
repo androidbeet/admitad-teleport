@@ -56,9 +56,11 @@ class TeleportClass
     }
 
     /**
+     * Returns the jump url
+     *
      * @link https://teleport.admitad.com/ru/instructionapi
      */
-    public function getDestinationUrl()
+    public function open()
     {
         $url = $this->prepare($this->url);
 
@@ -103,34 +105,34 @@ class TeleportClass
     }
 
     /**
-     * Convert web interface url to api url if need
+     * Validate and convert url
      *
      * @param string $url
      * @return string|string[]
      */
     private function prepare(string $url)
     {
-        // is empty
+        // empty url
         if (empty($url)) {
             exit($this->badUrlMessage . ' : empty url');
         }
 
-        // is valid url with protocol
+        // invalid url
         if (! filter_var($url, FILTER_VALIDATE_URL, 'FILTER_FLAG_SCHEME_REQUIRED')) {
             exit($this->badUrlMessage . ' : wrong url');
         }
 
-        // if web interface url
+        // convert web interface to api url
         if (strpos($url, self::G)) {
             return str_replace(self::G, self::TPT, $url);
         }
 
-        // if api url
+        // api url
         if (strpos($url, self::TPT)) {
             return $url;
         }
 
-        // is url doesnt have /g/ or /tpt/
+        // url doesnt have /g/ or /tpt/
         else {
             exit($this->badUrlMessage . ' : no segment in url');
         }
