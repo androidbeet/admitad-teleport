@@ -1,5 +1,5 @@
 {
-    "name": "abfromstreamhero/admitad-teleport",
+    "name": "androidbeet/admitad-teleport",
     "description": "PHP wrapper for Admitad Teleport API",
     "type": "library",
     "require": {
