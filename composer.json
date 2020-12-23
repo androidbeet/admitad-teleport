@@ -12,6 +12,7 @@
             "email": "ab@streamhero.com"
         }
     ],
+    "license": "MIT",
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
