@@ -1,3 +1,12 @@
+## PHP wrapper for Admitad Teleport API
+https://teleport.admitad.com/ru/instructionapi
+
+
+###Install
+
+`composer require androidbeet/admitad-teleport`
+
+
 Usage example #1
 ```
 use Classes\TeleportClass;

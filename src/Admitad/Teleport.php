@@ -1,11 +1,11 @@
 <?php
 
-namespace Classes;
+namespace Admitad;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-class TeleportClass
+class Teleport
 {
     /**
      * Web interface ad url segment
@@ -84,7 +84,7 @@ class TeleportClass
      * @param null $url
      * @return $this
      */
-    public function setUrl($url) : TeleportClass
+    public function setUrl($url) : Teleport
     {
          $this->url = $url;
 
@@ -97,7 +97,7 @@ class TeleportClass
      * @param string $countryCode
      * @return $this
      */
-    public function setCountryCode(string $countryCode): TeleportClass
+    public function setCountryCode(string $countryCode): Teleport
     {
         $this->countryCode = $countryCode;
 
